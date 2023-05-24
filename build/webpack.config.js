@@ -36,6 +36,11 @@ module.exports = {
         moduleIds: 'named'
     },
     plugins: [
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname
+            }
+        }),
         new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
@@ -82,3 +87,4 @@ module.exports = {
         ]
     }
 };
+
